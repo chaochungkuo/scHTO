@@ -40,9 +40,6 @@ HTO_sequences:
     sample_name: sample3
     hto_sequence: GCTTCCGTATATCTG
 
-cutoffs:
-  min_umi: 5
-
 expected_cell_number:
   - htolib_name: pool1
     sample_name: sample1

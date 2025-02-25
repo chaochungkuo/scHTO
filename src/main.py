@@ -4,7 +4,6 @@ import logging
 from src.config_validator import load_config, ConfigValidationError
 from src.fastq_loader import load_fastq
 from src.demultiplexer import categorize_reads_by_hto, deduplicate_umi, filter_cellbarcodes,split_GEX_fastqs
-import sys
 from collections import OrderedDict
 
 

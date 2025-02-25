@@ -1,4 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 import os
 import modin.pandas as pd
@@ -6,17 +5,6 @@ from fastqio import FASTQReader
 
 
 logger = logging.getLogger(__name__)
-
-NUC_MAP = {'A': 0, 'C': 1, 'G': 2, 'T': 3, 'N': 0}
-
-def encode_seq(seq: str) -> int:
-    """
-    Encode a nucleotide sequence into an integer using 2 bits per base.
-    """
-    result = 0
-    for base in seq:
-        result = (result << 2) | NUC_MAP.get(base, 0)
-    return result
 
 
 def load_fastq(libname, fastq_R1, fastq_R2, config, thread, chunk_size, output, statistics):

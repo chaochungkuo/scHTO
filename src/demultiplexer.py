@@ -1,7 +1,6 @@
 import logging
 from src.fastq_loader import read_fastq_in_chunks
 import numpy as np
-import sys
 import modin.pandas as pd
 import os
 import concurrent.futures

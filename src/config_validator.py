@@ -25,7 +25,6 @@ def validate_config(config: dict):
         "positions",
         "libraries_to_be_demultiplexed",
         "HTO_sequences",
-        "cutoffs",
         "expected_cell_number"
     ]
     for section in required_sections:

@@ -1,2 +1,5 @@
 PyYAML
 pytest
+modin[all]
+numpy
+ray
