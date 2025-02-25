@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from Cython.Build import cythonize
 
 setup(
     name="schto",
@@ -11,5 +12,7 @@ setup(
         "console_scripts": [
             "schto=src.main:main"
         ]
-    }
+    },
+    ext_modules = cythonize("src/fastq_chunk_processor.pyx",
+                            compiler_directives={'language_level' : "3"})
 )

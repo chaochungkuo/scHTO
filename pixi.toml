@@ -13,3 +13,11 @@ pyyaml = ">=6.0.2,<7"
 pytest = ">=8.3.4,<9"
 setuptools = ">=75.8.0,<76"
 pip = ">=25.0.1,<26"
+numpy = ">=2.2.3,<3"
+fastparquet = ">=2024.11.0,<2025"
+
+[pypi-dependencies]
+genomkit = ">=0.2.8, <0.3"
+levenshtein = ">=0.26.1, <0.27"
+modin = { version = ">=0.32.0, <0.33", extras = ["all"] }
+ray = ">=2.42.1, <3"

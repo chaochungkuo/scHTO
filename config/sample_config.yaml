@@ -3,46 +3,42 @@
 libraries_with_HTOs:
   - htolib_name: pool1
     R12: R1
-    path: fastq/pool1_hto_R1.fastq.gz
+    # path: /Users/ckuo/Downloads/Pool1_cell_surface_protein_Merged_R1_001.fastq.gz
+    path: /Users/ckuo/Downloads/Pool1_cell_surface_protein_sample_R1.fastq.gz
   - htolib_name: pool1
     R12: R2
-    path: fastq/pool1_hto_R2.fastq.gz
+    # path: /Users/ckuo/Downloads/Pool1_cell_surface_protein_Merged_R2_001.fastq.gz
+    path: /Users/ckuo/Downloads/Pool1_cell_surface_protein_sample_R2.fastq.gz
 
 positions:
-  - name: cell_barcode_start
-    position: 1
-    R12: R1
-  - name: cell_barcode_end
-    position: 16
-    R12: R1
-  - name: umi_start
-    position: 17
-    R12: R1
-  - name: umi_end
-    position: 26
-    R12: R1
-  - name: hto_start
-    position: 1
-    R12: R2
-  - name: hto_end
-    position: 11
-    R12: R2
+  cell_barcode_R12: R1
+  cell_barcode_start: 1
+  cell_barcode_end: 16
+  umi_R12: R1
+  umi_start: 17
+  umi_end: 28
+  hto_R12: R2
+  hto_start: 1
+  hto_end: 15
 
 libraries_to_be_demultiplexed:
   - htolib_name: pool1
     R12: R1
-    path: fastq/pool1_GEX_R1.fastq.gz
+    path: /Users/ckuo/Downloads/Pool1_GEX_sample_R1.fastq.gz
   - htolib_name: pool1
     R12: R2
-    path: fastq/pool1_GEX_R2.fastq.gz
+    path: /Users/ckuo/Downloads/Pool1_GEX_sample_R2.fastq.gz
 
 HTO_sequences:
   - htolib_name: pool1
     sample_name: sample1
-    hto_sequence: AGCTGGTCGAACG
+    hto_sequence: TTGGCCTTTGTATCG
   - htolib_name: pool1
     sample_name: sample2
-    hto_sequence: AGCTCCTCGAACG
+    hto_sequence: AACGCCAGTATGAAC
+  - htolib_name: pool1
+    sample_name: sample3
+    hto_sequence: GCTTCCGTATATCTG
 
 cutoffs:
   min_umi: 5
@@ -53,4 +49,7 @@ expected_cell_number:
     estimate_number: 30000
   - htolib_name: pool1
     sample_name: sample2
+    estimate_number: 30000
+  - htolib_name: pool1
+    sample_name: sample3
     estimate_number: 30000

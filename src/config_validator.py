@@ -46,11 +46,15 @@ def validate_config(config: dict):
                 logger.error("File does not exist: %s", entry["path"])
                 raise ConfigValidationError(f"File does not exist: {entry['path']}")
 
-    # Validate positions: check that each position entry has name, position, and R12.
-    for pos in config.get("positions", []):
-        for key in ["name", "position", "R12"]:
-            if key not in pos:
-                logger.error("Missing key '%s' in positions entry: %s", key, pos)
-                raise ConfigValidationError(f"Missing key '{key}' in positions entry: {pos}")
+    # Validate positions: check that each position entry has the required keys and values.
+    position_keys = [
+        "cell_barcode_R12", "cell_barcode_start", "cell_barcode_end",
+        "umi_R12", "umi_start", "umi_end",
+        "hto_R12", "hto_start", "hto_end"
+    ]
+    for key in position_keys:
+        if key not in config["positions"]:
+            logger.error("Missing key '%s' in positions section", key)
+            raise ConfigValidationError(f"Missing key '{key}' in positions section")
 
     logger.info("Configuration file validated successfully.")
