@@ -94,6 +94,53 @@ expected_cell_number:
     estimate_number: 30000
 ```
 
+## Statistics
+
+For transparency, scHTO exports the following files:
+
+- `output/pool1_umi_counts.csv` for UMI counts per cell barcodes per sample where you extracted from the library with HTOs.
+  ```csv
+  sample,cell_barcode,umi_count
+  sample1,CAATCCTGTCTGTGTG,198
+  sample3,CTGGAACGTCAGTCCA,159
+  sample1,GTTCATCGTCAGCGGA,46
+  sample1,CTCGAATTCCGGGTTG,45
+  sample3,AAGAGGTGTCATGGCC,42
+  sample3,GCGTAGTGTGCAGGTG,33
+  sample1,CCCAGCTCATCACATC,33
+  sample1,TGGATGTAGCCGAGTT,30
+  sample1,GGAAATGTCCATCGTC,30
+  sample1,GTGTAGCGTCTGTGCA,28
+  sample3,AACGCATAGCATCCTT,27
+  sample3,GGGCCATAGCCTGGTG,27
+  ...
+  ```
+- `output/pool1_statistics.csv` for all statistics.
+  ```csv
+  Library name,pool1
+  HTO R1 FASTQ,Pool1_cell_surface_protein_sample_R1.fastq.gz
+  HTO R2 FASTQ,Pool1_cell_surface_protein_sample_R2.fastq.gz
+  Total read pair,25000
+  Valid HTOs,19330
+  sample1 HTOs,6263
+  sample2 HTOs,2271
+  sample3 HTOs,10796
+  Unique barcodes and UMIs,17016
+  Unique barcodes and UMIs of sample1,5492
+  Unique barcodes and UMIs of sample2,2012
+  Unique barcodes and UMIs of sample3,9512
+  Filtered barcodes,14418
+  Filtered barcodes of sample1,4333
+  Filtered barcodes of sample2,1883
+  Filtered barcodes of sample3,8202
+  GEX R1,Pool1_GEX_sample_R1.fastq.gz
+  GEX R2,Pool1_GEX_sample_R2.fastq.gz
+  GEX total read pairs,250000
+  GEX filtered barcodes of sample2,56
+  GEX filtered barcodes of sample3,467
+  GEX filtered barcodes of sample1,112
+  ```
+
 ## Testing
 
 Run unit tests using:
