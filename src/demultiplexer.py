@@ -144,7 +144,7 @@ def split_GEX_fastqs(libname, config, filtered_df, output, chunk_size, statistic
     statistics["GEX R2"] = gex_fastqs["R2"]
     statistics["GEX total read pairs"] = total_read_pairs
     for sample in set(samples):
-        statistics[f"GEX filtered barcodes of {sample}"] = sample_counts[sample]
+        statistics[f"GEX filtered read pairs of {sample}"] = sample_counts[sample]
         
     return statistics
 

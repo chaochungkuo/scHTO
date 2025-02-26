@@ -18,6 +18,7 @@ A bioinformatics tool for demultiplexing single-cell libraries with sample hasht
 - **HTO Demultiplexing & UMI Deduplication:** Extracts HTO sequences, UMIs, and cell barcodes; categorizes reads by sample; deduplicates UMIs.
 - **Cell Barcode Extraction & Statistics:** Outputs cell barcode files per sample and detailed statistics.
 - **Demultiplexing:** Applies extracted cell barcode filters to additional libraries to produce filtered FASTQ files.
+- **Hamming distance:** Only cell barcode is allowed for hamming distance 1, because cell barcodes are longer and designed to be distinct. Hamming distance is now applied in matching HTO sequences and UMIs.
 - **Verbose Mode:** Optionally prints detailed step-by-step progress and statistics.
 
 ## Installation
@@ -136,9 +137,9 @@ For transparency, scHTO exports the following files:
   GEX R1,Pool1_GEX_sample_R1.fastq.gz
   GEX R2,Pool1_GEX_sample_R2.fastq.gz
   GEX total read pairs,250000
-  GEX filtered barcodes of sample2,56
-  GEX filtered barcodes of sample3,467
-  GEX filtered barcodes of sample1,112
+  GEX filtered read pairs of sample2,56
+  GEX filtered read pairs of sample3,467
+  GEX filtered read pairs of sample1,112
   ```
 
 ## Testing
